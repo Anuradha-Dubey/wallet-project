@@ -1,0 +1,139 @@
+1. Test Cases for: public Customer save (Customer c);
+
+Positive scenarios:
+
+a) 	Given we are creating a new customer account
+   	When Customer details are name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then returns a Customer object having name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+
+b)	Given we are updating existing customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then returns a Customer object having name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	
+Negative scenarios:
+
+a)	Given we are creating a new customer account
+   	When Customer details are name = null , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then gives error message "Name can not be blank".
+	
+b)  Given we are creating a new customer account
+   	When Customer details a are name = "Monica" , mobile = null , wallet= wallet1(balance=100)
+	Then gives error message "Mobile number can not be blank".
+	
+c)  Given we are creating a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= null
+	Then gives error message "Wallet can not be null".
+	
+d)  Given we are creating a new customer account
+   	When Customer details are name = "Monica" , mobile = "814764649777777" , wallet= wallet1(balance=100)
+	Then gives error message "Not a valid mobile number".
+	
+e)  Given we are creating a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646498" , wallet= wallet1(balance=100)
+	Then gives error message "No account registered with this mobile number".
+	
+f)  Given we are creating a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= wallet2(balance=-100)
+	Then gives error message "Balance of wallet can not be negative".
+-----------------------------------------------------------------------------------------------------------------------
+	
+2. Test Cases for: public Customer findByMobile(String mobileNo);
+
+Positive scenario:
+
+a) 	Given we are finding account by MobileNumber
+	When mobile no is "8147646496"
+	Then it should return the Customer object 
+
+
+Negative scenarios:
+
+a)  Given we are finding account by MobileNumber
+	when mobile no is "81476"
+	then it should return "Please enter a valid mobile number" 
+
+b)	Given we are finding account by MobileNumber
+	When mobile no is "gtg"
+	Then it should return "Please enter a valid mobile number" 
+
+c)	Given we are finding account by MobileNumber
+	When mobile no is null
+	Then it should return "Please enter a valid mobile number"
+
+d)	Given we are finding account by MobileNumber
+	when mobile no is "814764649777777"
+	then it should return "Please enter a valid mobile number" 
+
+e)	Given we are finding account by MobileNumber
+	When mobile no is "8147646498"
+	Then it should return "No account is registered with this mobile Number" 
+
+-----------------------------------------------------------------------------------------------------------------------
+3. Test Cases for: public Customer addCustomer(String name, String mobileNo, BigInteger amount);
+
+Positive scenarios:
+
+a) 	Given we are adding a new customer account
+   	When Customer details are name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then returns a Customer object having name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+
+b)	Given we are updating existing customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then returns a Customer object having name ="Monica" , mobile = "8147646497" , wallet= wallet1(balance=100)
+	
+Negative scenarios:
+
+a)	Given we are adding a new customer account
+   	When Customer details are name = null , mobile = "8147646497" , wallet= wallet1(balance=100)
+	Then gives error message "Name can not be blank".
+	
+b)  Given we are adding a new customer account
+   	When Customer details a are name = "Monica" , mobile = null , wallet= wallet1(balance=100)
+	Then gives error message "Mobile number can not be blank".
+	
+c)  Given we are adding a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= null
+	Then gives error message "Wallet can not be null".
+	
+d)  Given we are adding a new customer account
+   	When Customer details are name = "Monica" , mobile = "814764649777777" , wallet= wallet1(balance=100)
+	Then gives error message "Not a valid mobile number".
+	
+e)  Given we are adding a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646498" , wallet= wallet1(balance=100)
+	Then gives error message "No account registered with this mobile number".
+	
+f)  Given we are adding a new customer account
+   	When Customer details are name = "Monica" , mobile = "8147646497" , wallet= wallet2(balance=-100)
+	Then gives error message "Balance of wallet can not be negative".
+-----------------------------------------------------------------------------------------------------------------------
+4. Test Cases for: public Customer showBalance(String mobileNo);
+	
+Positive scenario:
+
+a) 	Given we want to show balance by passing Mobile Number
+	When mobile no is "8147646496"
+	Then it should return the Customer object 
+
+
+Negative scenarios:
+
+a)  Given we want to show balance by passing Mobile Number
+	when mobile no is "81476"
+	then it should return "Please enter a valid mobile number" 
+
+b)	Given we want to show balance by passing Mobile Number
+	When mobile no is "gtg"
+	Then it should return "Please enter a valid mobile number" 
+
+c)	Given we want to show balance by passing Mobile Number
+	When mobile no is null
+	Then it should return "Mobile can not be null"
+
+d)	Given we want to show balance by passing Mobile Number
+	when mobile no is "814764649777777"
+	then it should return "Please enter a valid mobile number" 
+
+e)	Given we want to show balance by passing Mobile Number
+	When mobile no is "8147646498"
+	Then it should return "No account is registered with this mobile Number" 
